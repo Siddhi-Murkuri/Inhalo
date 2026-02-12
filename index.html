@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inhalo | Smart Care Hub</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand">Inhalo</div>
+      <nav>
+        <a class="active" href="index.html">Device Settings</a>
+        <a href="contacts.html">Emergency Contacts</a>
+      </nav>
+    </header>
+
+    <main class="layout">
+      <section class="panel">
+        <h1>Shared Doctor + Patient Settings</h1>
+        <p class="subtitle">
+          Adjust inhaler details together, then sync over Bluetooth to the Inhalo side screen.
+        </p>
+
+        <form id="settings-form" class="stack">
+          <label>
+            <span>Who is making this change?</span>
+            <select id="changed-by" required>
+              <option value="Doctor">Doctor</option>
+              <option value="Patient">Patient</option>
+            </select>
+          </label>
+
+          <label>
+            <span>Expiry date</span>
+            <input id="expiry-date" type="date" required />
+          </label>
+
+          <label>
+            <span>Dosage (puffs/day)</span>
+            <input id="dosage" type="number" min="1" max="24" value="2" required />
+          </label>
+
+          <div class="button-row">
+            <button type="button" id="connect-btn">Connect to Inhalo (Bluetooth)</button>
+            <button type="submit">Save & Sync</button>
+          </div>
+        </form>
+
+        <p id="settings-status" class="status">Not connected.</p>
+      </section>
+
+      <section class="panel inhalo-preview">
+        <h2>Inhalo Side Screen Preview</h2>
+        <div class="screen" id="screen-preview">
+          <p><strong>Expiry:</strong> <span id="preview-expiry">--</span></p>
+          <p><strong>Dosage:</strong> <span id="preview-dosage">2 puffs/day</span></p>
+          <p><strong>Changed by:</strong> <span id="preview-changed-by">Doctor</span></p>
+        </div>
+        <p class="hint">When connected, these values are sent to the device over Bluetooth.</p>
+      </section>
+    </main>
+
+    <script src="settings.js"></script>
+  </body>
+</html>
