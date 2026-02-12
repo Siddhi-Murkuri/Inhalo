@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inhalo | Emergency Contacts</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand">Inhalo</div>
+      <nav>
+        <a href="index.html">Device Settings</a>
+        <a class="active" href="contacts.html">Emergency Contacts</a>
+      </nav>
+    </header>
+
+    <main class="layout single-column">
+      <section class="panel">
+        <h1>Emergency Contact Manager</h1>
+        <p class="subtitle">
+          Update who should be notified if the Inhalo emergency button is pressed.
+        </p>
+
+        <div class="notice">
+          <h2>POC Mode (Static Demo)</h2>
+          <p>
+            This is a visual prototype only. Emergency alerts are simulated in the UI and no real SMS is sent.
+          </p>
+        </div>
+
+        <form id="contact-form" class="stack">
+          <label>
+            <span>Contact name</span>
+            <input id="contact-name" type="text" placeholder="e.g. Alex Carter" required />
+          </label>
+          <label>
+            <span>Phone number</span>
+            <input id="contact-phone" type="tel" placeholder="+1 555 555 0000" required />
+          </label>
+          <button type="submit">Add Contact</button>
+        </form>
+
+        <ul id="contact-list" class="contact-list"></ul>
+
+        <div class="notice">
+          <h2>Emergency Flow (Simulated)</h2>
+          <p>
+            Click the button below to preview which saved contacts would be notified in a real implementation.
+          </p>
+          <button id="simulate-emergency" type="button">Simulate Emergency Alert</button>
+          <p id="contact-status" class="status">No alerts sent yet.</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="contacts.js"></script>
+  </body>
+</html>
